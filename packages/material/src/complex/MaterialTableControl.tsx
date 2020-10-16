@@ -91,6 +91,7 @@ const generateCells = (
   cells?: JsonFormsCellRendererRegistryEntry[]
 ) => {
   if (schema.type === 'object') {
+    console.log(schema)
     return getValidColumnProps(schema).map(prop => {
       const cellPath = Paths.compose(rowPath, prop);
       const props = {

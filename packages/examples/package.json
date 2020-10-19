@@ -1,6 +1,6 @@
 {
   "name": "@jsonforms/examples",
-  "version": "2.4.3",
+  "version": "2.4.4-alpha.0",
   "description": "JSON Forms Example Data",
   "repository": "https://github.com/eclipsesource/jsonforms",
   "bugs": "https://github.com/eclipsesource/jsonforms/issues",

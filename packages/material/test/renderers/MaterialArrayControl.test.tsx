@@ -202,46 +202,6 @@ describe('Material array control', () => {
     expect(headerColumns).toHaveLength(2);
   });
 
-  it('should use title as a header if it exists', () => {
-    const store = initJsonFormsStore();
-    // re-init
-    const data: any = { test: [] };
-    const schema: JsonSchema = {
-      type: 'object',
-      properties: {
-        test: {
-          type: 'array',
-          items: { type: 'object' },
-          title: 'my test'
-        }
-      }
-    };
-    const uischema: ControlElement = {
-      type: 'Control',
-      scope: '#/properties/test'
-    };
-    store.dispatch(Actions.init(data, schema, uischema));
-
-    wrapper = mount(
-      <Provider store={store}>
-        <JsonFormsReduxContext>
-          <MaterialArrayControlRenderer schema={schema} uischema={uischema} />
-        </JsonFormsReduxContext>
-      </Provider>
-    );
-
-    const rows = wrapper.find('tr');
-
-    const title=wrapper.find('')
-    console.log(rows.debug());
-
-    // two header rows + no data row
-    expect(rows.length).toBe(3);
-    const headerColumns = rows.at(1).children();
-    // 2 columns: content + buttons
-    expect(headerColumns).toHaveLength(2);
-  });
-
   it('should render empty primitives', () => {
     const store = initJsonFormsStore();
     // re-init
